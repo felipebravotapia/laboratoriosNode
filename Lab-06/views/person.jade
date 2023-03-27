@@ -1,0 +1,39 @@
+extends layout
+
+block content 
+    h1= title
+    p Listado de #{title}
+
+    div.table-response 
+        table.table.table-striped
+            thead.thead-dark
+            tr
+                th BusinessEntityID
+                th PersonType
+                th NameStyle
+                th Title
+                th FirstName
+                th MiddleName
+                th LastName
+                th Suffix
+                th EmailPromotion
+                th AdditionalContactInfo
+                th Demographics
+                th rowguid
+                th ModifiedDate
+            tbody 
+            each person in persons
+                tr
+                    th #{person.BusinessEntityID}
+                    td #{person.PersonType}
+                    td #{person.NameStyle}
+                    td #{person.Title}
+                    td #{person.FirstName}
+                    td #{person.MiddleName}
+                    td #{person.LastName}
+                    td #{person.Suffix}
+                    td #{person.EmailPromotion}
+                    td #{person.AdditionalContactInfo}
+                    td #{person.Demographics}
+                    td #{person.rowguid}
+                    td #{person.ModifiedDate}

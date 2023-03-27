@@ -1,0 +1,26 @@
+extends layout
+
+block content 
+    h1= title
+    p Listado de #{title}
+
+    div.table-response 
+        table.table.table-striped
+            thead.thead-dark
+            tr
+                th AddressID
+                th AddressLine1
+                th AddressLine2
+                th City
+                th StateProvinceID
+                th PostalCode
+            tbody 
+            each direccion in direcciones
+                tr
+                    th #{direccion.AddressID}
+                    th #{direccion.AddressLine1}
+                    th #{direccion.AddressLine2}
+                    th #{direccion.City}
+                    th #{direccion.StateProvinceID}
+                    th #{direccion.PostalCode}
+

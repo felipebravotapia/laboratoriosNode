@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Listado de #{title}
+  form(action="/usuario", method="post" role='form')
+   div.form-group
+    label(for='name') Name: 
+    input#name.form-control(type="text", placeholder="username", name="username") 
+   div.form-group
+    label(for="password") Password: 
+     input#email.form-control(type="password",placeholder="Password", name="password")
+   button.btn.btn-primary(type="submit", name="grabar") Grabar

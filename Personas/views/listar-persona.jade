@@ -1,0 +1,30 @@
+extends layout
+
+block content 
+    h1= title
+    p Listado de #{title}
+
+    div.table-response 
+        table.table.table-striped
+            thead.thead-dark
+            tr
+                th BusinessEntityID
+                th PersonType
+                th NameStyle
+                th Title
+                th FirstName
+                th MiddleName
+                th LastName
+                th EmailPromotion
+            tbody 
+            each persona in personas
+                tr
+                    th #{persona.BusinessEntityID}
+                    th #{persona.PersonType}
+                    th #{persona.NameStyle}
+                    th #{persona.Title}
+                    th #{persona.FirstName}
+                    th #{persona.MiddleName}
+                    th #{persona.LastName}
+                    th #{persona.EmailPromotion}
+

@@ -1,0 +1,46 @@
+extends layout
+
+
+
+block content
+  h1= title
+  p creación de #{title}
+
+    div.container
+    .row.justify-content-center
+      .col-md-6
+        .card.mt-5
+          .card-body
+            h2.text-center.mb-4 Crear Persona
+            form(action="/crear-persona" method="POST" role='form')
+
+              .form-group
+                label(for='persontype') [PersonType]
+                input#email.form-control(type='text' name='persontype', required)
+
+                .form-group
+                label(for='namestyle') [NameStyle]
+                input#email.form-control(type='number' name='namestyle', required)
+
+                .form-group
+                label(for='title') [Title]
+                input#email.form-control(type='text' name='title', required)
+
+                .form-group
+                label(for='firstname') [FirstName]
+                input#email.form-control(type='text' name='firstname', required)
+
+                .form-group
+                label(for='middelname') [MiddleName]
+                input#email.form-control(type='text' name='middelname', required)
+
+                .form-group
+                label(for='lastname') [LastName]
+                input#email.form-control(type='text' name='lastname', required)
+
+                .form-group
+                label(for='emailpromotion') [EmailPromotion]
+                input#email.form-control(type='number' name='emailpromotion', required)
+
+              .form-group
+                button.btn.btn-primary.btn-block(type='submit') Crear Usuario

@@ -1,0 +1,23 @@
+extends layout
+
+
+
+block content
+  h1= title
+  p Listado de #{title}
+
+    div.container
+    .row.justify-content-center
+      .col-md-6
+        .card.mt-5
+          .card-body
+            h2.text-center.mb-4 Inicio de sesión
+            form(action="/usuario" method="POST" role='form')
+              .form-group
+                label(for='email') Correo electrónico
+                input#email.form-control(type='email' name='username', required)
+              .form-group
+                label(for='clave') Contraseña
+                input#password.form-control(type='password' name='clave', required)
+              .form-group
+                button.btn.btn-primary.btn-block(type='submit') Iniciar sesión
