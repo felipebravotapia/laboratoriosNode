@@ -1,7 +1,4 @@
 extends layout
-
-
-
 block content
 
   div.container
@@ -9,8 +6,8 @@ block content
     .col-md-6
       .card.mt-5
         .card-body
-          h2.text-center.mb-4 Inicio de sesión
-          form(action="/usuario/login" method="POST" role='form')
+          h2.text-center.mb-4 Registrar Usuario
+          form(action="/usuario" method="POST" role='form')
             .form-group
               label(for='email') Correo electrónico
               input#email.form-control(type='email' name='username', required)
@@ -18,4 +15,4 @@ block content
               label(for='clave') Contraseña
               input#password.form-control(type='password' name='clave', required)
             .form-group
-              button.btn.btn-primary.btn-block.mt-2(type='submit') Iniciar sesión
+              button.btn.btn-primary.btn-block.mt-2(type='submit') Registrar

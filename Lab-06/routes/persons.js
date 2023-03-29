@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 /* GET users listing. */
-router.post("/", function (req, res, next) {
+router.get("/", function (req, res, next) {
   const title = "Persons";
   var persons = [
     {

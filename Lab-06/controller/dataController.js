@@ -28,4 +28,18 @@ module.exports = {
       }
     }
   },
+  getDataLogin: async (username) => {
+    {
+      try {
+        this.sqlServerConnection = new SqlServerConnection();
+        await this.sqlServerConnection.connect();
+        const query = `SELECT [username] ,[clave] FROM [usuarios] WHERE username = '${username}'`;
+        return await this.sqlServerConnection.executeQuery(query);
+      } catch (err) {
+        throw err;
+      } finally {
+        // this.sqlServerConnection.close();
+      }
+    }
+  },
 };

@@ -8,8 +8,20 @@ const indexRouter = require("./routes/index");
 const personsRouter = require("./routes/persons");
 const usuarioRouter = require("./routes/usuario");
 const listarUsuarioRouter = require("./routes/listarUsuarios");
+const uploadsRouter = require("./routes/upload");
+const RegistrarUsuarioRouter = require("./routes/registar-usuario");
 
 const app = express();
+const session = require("express-session");
+
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+  })
+);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -25,6 +37,8 @@ app.use("/", indexRouter);
 app.use("/person", personsRouter);
 app.use("/usuario", usuarioRouter);
 app.use("/listar-usuarios", listarUsuarioRouter);
+app.use("/upload", uploadsRouter);
+app.use("/registrar-usuario", RegistrarUsuarioRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
